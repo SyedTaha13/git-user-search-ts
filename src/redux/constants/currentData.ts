@@ -1,0 +1,7 @@
+const CURRENT_DATA ={
+    SET: 'CURRENT_DATA_SET',
+    CLEAR: 'CURRENT_DATA_CLEAR',
+
+}
+
+export default CURRENT_DATA;
