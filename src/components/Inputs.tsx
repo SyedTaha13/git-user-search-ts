@@ -14,17 +14,18 @@ import {clearCurrentData} from '../redux/actions/currentData'
 const StyledInput = styled.input({
     fontFamily: "Inter-Regular",
     fontSize: "14px",
-    height:'30px',
-    width:'220px',
-    borderWidth:'0.5px'
+    height:'50px',
+    width:'24%',
+    border: '0.5px slid gray',
 })
 
 const StyledSelect = styled.select({
     fontFamily: "Inter-Regular",
     fontSize: "14px",
     width:"100px",
-    height:"30px",
-    marginLeft:'15px'
+    height:"55px",
+    marginLeft:'15px',
+    border: '0.5px slid gray'
 })
 
 const InputsContainer = styled.div({

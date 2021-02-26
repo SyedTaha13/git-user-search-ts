@@ -6,7 +6,7 @@ import Results from '../components/Results'
 const MainPage: React.FC = () =>{
 
     return(
-        <div>
+        <div style={{padding: 20}}>
             {/* <p>Test</p> */}
             <Header text='Search users or repositories below'/>
             <Inputs />

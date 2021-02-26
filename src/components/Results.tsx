@@ -1,5 +1,5 @@
 import React from 'react'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 import {connect, RootStateOrAny} from 'react-redux'
 
 
@@ -9,22 +9,34 @@ const Results: React.FC<ResultProps> = (props:any) =>{
     console.log('Results Props > ' , props)
     const {currentDataReducer} = props
     return(
-        <div>
+        <CardWrapper>
             {
                 currentDataReducer.data?.map((val:any,idx:number)=>{
                     console.log('Each Value > ' , val)
                     if(val.login){
                         return(
-                            <p>{val.login}</p>
+                            <Card>
+                                <Profile>
+                                    <img style={{width: 50, height: 50, borderRadius: 50}} src={val.avatar_url} />
+                                    <p style={{fontSize: 18, marginLeft: 20}}>{val.login}</p>
+                                </Profile>
+                                <div>
+                                    <p><LinkText target="_blank" href={val.html_url}>Profile</LinkText></p>
+                                    
+                                </div>
+                            </Card>
                         )
                     }else{
                         return(
-                            <p>{val.created_at}</p>
+                            <Card>
+                                <p>Name: {val.name}</p>
+                                <p><a target="_blank" href={val.html_url}>Repository</a></p>
+                            </Card>
                         )
                     }
                 })
             }
-        </div>
+        </CardWrapper>
     )
 }
 
@@ -38,3 +50,42 @@ const mapStateToProps = (state:RootStateOrAny) =>{
 }
 
 export default connect(mapStateToProps,null)(Results) ; 
+
+const CardWrapper = styled.div`
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+margin-top: 20px;
+
+`
+
+const Profile = styled.div`
+display: flex;
+`
+
+const LinkText = styled.a`
+    font-size: 18px;
+    font-family: "Inter-SemiBold"; 
+    position: relative; 
+    text-decoration: none;
+    color: black;
+    :hover{
+        // color:red;
+        text-decoration: underline;
+    }
+`
+const Card = styled.div`
+display: flex;
+flex-direction: column;
+width: 30%;
+height: 100px;
+background: lightgray;
+margin-bottom: 20px;
+padding: 20px;
+
+@media (max-width: 768px){
+ width:  40%  
+}
+`

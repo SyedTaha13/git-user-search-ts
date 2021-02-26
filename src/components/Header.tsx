@@ -1,4 +1,5 @@
 import React from 'react'
+import Logo from '../assets/githubLogo.png'
 // import styled from 'styled-components'
 import {connect, RootStateOrAny} from 'react-redux'
 
@@ -9,8 +10,14 @@ const Header: React.FC<HeaderProps> = (props) =>{
 
     return(
         <div>
-            <h4>Github Sercher</h4>
-            <p>{props.text}</p>
+            <div style={{display: 'flex', alignItems:'center'}}>
+            <img src={Logo} style={{width: 70, height: 70}}/>
+            <div>
+            <h3 style={{marginBottom: 0}}>Github Searcher</h3>
+            <h5 style={{marginTop: 3, color: 'gray'}}>{props.text}</h5>
+            </div>
+            </div>
+            
         </div>
     )
 }

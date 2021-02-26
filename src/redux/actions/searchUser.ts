@@ -5,12 +5,12 @@ import { currentData } from './currentData'
 
 
 const searchUser =  (text:string) => async (dispatch: (arg0: { type: string; payLoad?: any; err?: any; }) => void) =>{
-    const octokit = new Octokit({ auth: `627e975b34b6c26b0436800961058df2a7c7b4f0` });
+    const octokit = new Octokit({ auth: `78bd61f0e9ee3ae1ffa918faf059ca5b555a0c66` });
     dispatch(searchUserLoading())
     try {
         let apiCall = await octokit.request('GET /search/users',{
                                         q: `${text}`,
-                                        per_page:10,
+                                        per_page:12,
                                         page:1
                                     })
         dispatch(searchUserSuccess(apiCall.data.items))
