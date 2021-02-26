@@ -6,13 +6,11 @@ import {connect, RootStateOrAny} from 'react-redux'
 import { ResultProps } from '../types/componentTypes';
 
 const Results: React.FC<ResultProps> = (props:any) =>{
-    console.log('Results Props > ' , props)
     const {currentDataReducer} = props
     return(
         <CardWrapper>
             {
                 currentDataReducer.data?.map((val:any,idx:number)=>{
-                    console.log('Each Value > ' , val)
                     if(val.login){
                         return(
                             <Card>
@@ -85,7 +83,17 @@ background: lightgray;
 margin-bottom: 20px;
 padding: 20px;
 
-@media (max-width: 768px){
- width:  40%  
+@media only screen and (max-width: 467px) {
+    width:  100%  
+   }
+@media only screen and (min-width: 468px) and (max-width: 767px) {
+    width:  40%  
+   }
+@media only screen and (min-width: 768px) and (max-width: 849px){
+    width:  40%  
 }
+@media only screen and (min-width: 850px){
+    width:  28%  
+}
+
 `

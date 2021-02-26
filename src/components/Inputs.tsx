@@ -48,7 +48,7 @@ const Results: React.FC = (props:any) =>{
         if(inputState.length>2){
             debounceLoadData(inputState,selectState)
         }
-        else if (inputState.length<3 && prevTextState.current.length==2){
+        else if (inputState.length<3){
             props.clearUserData()
             props.clearRepoData()
             props.clearCurrentData()
