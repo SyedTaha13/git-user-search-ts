@@ -1,6 +1,10 @@
 # Getting Started with Create React App
 
+## Note 
+Kindly Generate your own git token from (https://github.com/settings/tokens/new?scopes=repo). and change .env REACT_APP_GIT_KEY variable
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 

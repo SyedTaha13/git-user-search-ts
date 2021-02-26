@@ -4,6 +4,7 @@ import {Octokit} from '@octokit/core'
 import { currentData } from './currentData'
 
 const searchRepo =  (text:string) => async (dispatch: (arg0: { type: string; payLoad?: any; err?: any; }) => void) =>{
+
     const octokit = new Octokit({ auth: `${process.env.REACT_APP_GIT_KEY}` });
     dispatch(searchRepoLoading())
     try {
